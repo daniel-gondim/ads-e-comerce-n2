@@ -16,9 +16,18 @@ public class Pessoa extends BaseModel {
     @Column(name = "data_inicio", length = 50, nullable = false)
     private LocalDateTime dataInicio;
 
-    @Column(name = "data_inicio", length = 50, nullable = false)
+    @Column(name = "data_fim", length = 50, nullable = false)
     private LocalDateTime dataFim;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "pessoa_id")
     private List<Contato> contatos;
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "pessoa_id", referencedColumnName = "pessoa_id")
+    private List<PessoaFisica> pessoaFisicas;
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "pessoa_id", referencedColumnName = "pessoa_id")
+    private List<PessoaJuridica> pessoaJuridicas;
 }
