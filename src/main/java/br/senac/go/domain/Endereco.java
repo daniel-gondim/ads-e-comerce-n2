@@ -17,7 +17,7 @@ public class Endereco extends BaseModel{
     @Column(name = "data_inicio", length = 50, nullable = false)
     private LocalDateTime dataInicio;
 
-    @Column(name = "data_inicio", length = 50, nullable = false)
+    @Column(name = "data_fim", length = 50, nullable = false)
     private LocalDateTime dataFim;
     //private Contato contato;
 
