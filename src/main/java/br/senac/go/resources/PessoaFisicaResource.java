@@ -127,7 +127,7 @@ public class PessoaFisicaResource implements
      */
     @Override
     @DeleteMapping(value = "/{id}")
-    public void deleteById(Integer id) {
+    public void deleteById(@PathVariable("id") Integer id) {
         LOGGER.log(Level.INFO,
                 String.format("Exemplo do DELETE: %d", id));
     }
