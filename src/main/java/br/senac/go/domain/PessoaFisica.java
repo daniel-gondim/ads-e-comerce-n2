@@ -12,7 +12,7 @@ public class PessoaFisica extends BaseModel {
     @Column(length = 50, nullable = false)
     private String cpf;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "pessoa_id", referencedColumnName = "pessoa_id")
     private Pessoa pessoa;
 }

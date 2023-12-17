@@ -22,6 +22,7 @@ public class Contato extends BaseModel {
      * A consulta é realizada somente quando a propriedade é 'invocada'.
      */
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "pessoa_id", nullable = false)
     private Pessoa pessoa;
     /**
      * A configuração @OneToMany por padrão o fetch é sempre LAZY

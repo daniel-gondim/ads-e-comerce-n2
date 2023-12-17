@@ -13,7 +13,7 @@ public class PessoaJuridica extends BaseModel {
     @Column(length = 50, nullable = false)
     private String cnpj;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "pessoa_id", referencedColumnName = "pessoa_id")
     private Pessoa pessoa;
 }
